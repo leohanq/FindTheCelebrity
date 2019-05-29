@@ -9,7 +9,7 @@ import dataproviders.database.domain.Person;
 import dataproviders.database.persistence.PersonJdbcRepository;
 
 @Component
-public class FindCelebraty {
+public class FindCelebrity {
 
    private static final String CELEBRITY_NOT_FOUND = "Not Celebraty Found";
    private static final String DUA_LIPA = "Dua Lipa";
