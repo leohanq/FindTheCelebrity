@@ -21,6 +21,7 @@ public class Application implements CommandLineRunner {
 
    @Override
    public void run(String... args) throws Exception {
-      System.out.println(findCelebraty.getCelebraty());
+      System.out.println("Celebrity Found: ");
+      System.out.println(findCelebraty.getCelebraty().getName());
    }
 }

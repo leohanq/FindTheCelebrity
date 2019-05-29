@@ -8,6 +8,15 @@ buildscript {
    dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
 }
 
+springBoot {
+   executable = true
+}
+
+jar{
+   baseName = 'FindCelebrity'
+   version = '1.0'
+}
+
 
 repositories { jcenter() }
 
@@ -18,7 +27,5 @@ dependencies {
    compile "org.springframework.boot:spring-boot-devtools:$springBootVersion"
    runtime "com.h2database:h2"
    compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.0.Final'
-   compile group: 'org.springframework', name: 'spring-context', version: '4.2.0.RELEASE'
-   compile group: 'org.springframework', name: 'spring-core', version: '4.3.12.RELEASE'
    compile group: 'org.springframework', name: 'spring-jdbc', version: '4.1.9.RELEASE'
 }
