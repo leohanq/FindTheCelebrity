@@ -1,0 +1,24 @@
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+
+buildscript {
+   ext { springBootVersion = '1.4.3.RELEASE' }
+   repositories { mavenCentral() }
+   dependencies { classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") }
+}
+
+
+repositories { jcenter() }
+
+dependencies {
+
+   compile "org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"
+   compile "org.springframework.boot:spring-boot-starter-web:$springBootVersion"
+   compile "org.springframework.boot:spring-boot-devtools:$springBootVersion"
+   runtime "com.h2database:h2"
+   compile group: 'org.hibernate.javax.persistence', name: 'hibernate-jpa-2.0-api', version: '1.0.0.Final'
+   compile group: 'org.springframework', name: 'spring-context', version: '4.2.0.RELEASE'
+   compile group: 'org.springframework', name: 'spring-core', version: '4.3.12.RELEASE'
+   compile group: 'org.springframework', name: 'spring-jdbc', version: '4.1.9.RELEASE'
+}
