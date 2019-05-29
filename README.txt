@@ -14,7 +14,7 @@ SprintBoot Standalone project
 # Prerequisites
 
  * Installation of Java 8 (JDK) or higher
- * Installation of Maven 2.14.X or higher
+ * Installation of Gradle 2.14.X or higher
  * Installation of Supported version of the Eclipse Tool as an IDE or any other you preffer
 
 
