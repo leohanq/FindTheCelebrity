@@ -1,10 +1,10 @@
 INSERT INTO person
-values(10001,'Dua Lipa');
+values(10001, true, 'Dua Lipa');
 INSERT INTO person
-values(10002,'Fan1');
+values(10002, false, 'Fan1');
 INSERT INTO person
-values(10003,'Fan2');
+values(10003, false, 'Fan2');
 INSERT INTO person
-values(10004,'Fan3');
+values(10004, false, 'Fan3');
 INSERT INTO person
-values(10005,'Fan4');
+values(10005, false, 'Fan4');

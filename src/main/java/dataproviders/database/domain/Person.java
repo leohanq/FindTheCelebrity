@@ -8,14 +8,26 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "person")
 public class Person {
-    
+
    @Id
    @Column(name = "id", unique = true, nullable = false)
    private Integer Id;
-   
+
    @Column(name = "name")
    private String name;
-   
+
+   @Column(name = "isCelebrity")
+   private Boolean isCelebrity;
+
+   public Person() {
+   }
+
+   public Person(int id, String name, Boolean isCelebrity) {
+      this.Id = id;
+      this.name = name;
+      this.isCelebrity = isCelebrity;
+   }
+
    public Integer getId() {
       return Id;
    }
@@ -32,8 +44,16 @@ public class Person {
       this.name = name;
    }
 
+   public Boolean getIsCelebrity() {
+      return isCelebrity;
+   }
+
+   public void setIsCelebrity(Boolean isCelebrity) {
+      this.isCelebrity = isCelebrity;
+   }
+
    @Override
    public String toString() {
-      return "Person [Id=" + Id + ", name=" + name + "]";
+      return "Person [Id=" + Id + ", name=" + name + ", isCelebrity=" + isCelebrity + "]";
    }
 }

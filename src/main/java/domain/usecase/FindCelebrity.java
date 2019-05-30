@@ -1,24 +1,28 @@
 package domain.usecase;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import dataproviders.database.domain.Person;
-import dataproviders.database.persistence.PersonJdbcRepository;
+import dataproviders.database.persistence.IPersonRepository;
 
 @Component
 public class FindCelebrity {
 
-   private static final String CELEBRITY_NOT_FOUND = "Not Celebraty Found";
-   private static final String DUA_LIPA = "Dua Lipa";
-   @Autowired
-   PersonJdbcRepository repository;
+   private static final int FIRST_POSITION = 0;
 
-   public Person getCelebraty() throws Exception {
-      List<Person> people = repository.findAll();
-      return people.stream().filter(person -> person.getName().equals(DUA_LIPA)).findFirst()
-            .orElseThrow(() -> new Exception(CELEBRITY_NOT_FOUND));
+   @Autowired
+   IPersonRepository personRepository;
+   
+   public Person getCelebrity() throws Exception {
+      List<Person> people = personRepository.findAll();
+      people.sort(comparatorByCelebrity);
+      return people.get(FIRST_POSITION);
    }
+
+   Comparator<Person> comparatorByCelebrity = (personFirst, personSecond) -> personSecond.getIsCelebrity()
+         .compareTo(personFirst.getIsCelebrity());
 }
